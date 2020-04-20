@@ -1,8 +1,3 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 
 require('./bootstrap');
 
@@ -16,17 +11,54 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+// const files = require.context('./', true, /\.vue$/i);
+// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+// Vue.component('sitios-component', require('./components/sucursal/SitiosComponent.vue').default);
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+//FILTERS
+Vue.component('filters-component', require('./components/filters/Filter.vue').default);
+
+
+//REPORTS
+Vue.component('reportes-component', require('./components/reportes/Reportes.vue').default);
+
+
+//USUARIO
+
+Vue.component('flota-component', require('./components/user/FlotaComponent.vue').default);
+Vue.component('perfil-component', require('./components/user/PerfilComponent.vue').default);
+Vue.component('usuario-component', require('./components/user/UsuarioComponent.vue').default); 
+
+
+//PRODUCTOS
+    //ESTRUCTURAS
+    Vue.component('estructuras-component', require('./components/productos/Estructuras.vue').default);
+    Vue.component('estructura-component', require('./components/productos/Estructura.vue').default);
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+import swal from 'sweetalert2'
+window.swal = swal;
+
+// const toast = swal.mixin({
+//     toast: true,
+//     position: 'top-end',
+//     showConfirmButton: false,
+//     timer: 3000
+// });
+
+// window.toast = toast;
+
+
 
 const app = new Vue({
     el: '#app',
 });
+
+
+
