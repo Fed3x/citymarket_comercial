@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -37,4 +38,24 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    public function getCreatedAtAttribute($date) {
+        return Carbon::parse($date)->setTimezone('America/Asuncion')->format('d/m/Y H:i:s');
+    }
+
+    public function isAdministrador(){
+        if ($this->perfil->descripcion == 'Administrador') {
+            return true;
+        }
+        return false;
+    }
+
+
+
+    public function perfil()
+    {
+        return $this->belongsTo('App\Perfil', 'id_perfil');
+    }
 }

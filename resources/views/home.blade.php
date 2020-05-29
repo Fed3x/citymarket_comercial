@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    Bienvenido al portal de reportes CityMarket
                 </div>
             </div>
         </div>

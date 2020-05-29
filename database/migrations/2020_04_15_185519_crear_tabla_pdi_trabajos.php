@@ -18,7 +18,7 @@ class CrearTablaPdiTrabajos extends Migration
             $table->string('descripcion', 50);
             $table->string('area_trabajo', 50);
             $table->string('trabajo', 50);
-
+            $table->boolean('estado')->default(true);
             $table->string('created_by',10);
             $table->string('updated_by',10)->nullable();
             $table->timestamps();

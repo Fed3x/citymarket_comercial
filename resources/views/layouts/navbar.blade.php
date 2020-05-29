@@ -19,350 +19,45 @@
                     </a>
                     <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                         <li class="dropdown-item"><a tabindex="-1"
-                            href="/rendiciones">Rendiciones</a>
+                            href="/generar_reportes">Generar Reportes</a>
                         </li>
-                        {{-- <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Institucion</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1"
-                                        href="infraestructura">Infraestructura</a>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Perfiles y Usuarios</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="/usuarios">Usuarios</a></li>
-                                <li class="dropdown-item"><a href="/perfiles">Perfiles</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li> --}}
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="far fa-clipboard"></i> Reportes
-                    </a>
-                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                        <li class="dropdown-item"><a tabindex="-1"
-                            href="/generar_reportes">Generar</a>
-                        </li>
-                        {{-- <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Institucion</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1"
-                                        href="infraestructura">Infraestructura</a>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Perfiles y Usuarios</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="/usuarios">Usuarios</a></li>
-                                <li class="dropdown-item"><a href="/perfiles">Perfiles</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li> --}}
-                    </ul>
-                </li>
-                {{-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Administracion
-                    </a>
-                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Institucion</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1"
-                                        href="infraestructura">Infraestructura</a>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Perfiles y Usuarios</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="/usuarios">Usuarios</a></li>
-                                <li class="dropdown-item"><a href="/perfiles">Perfiles</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Even More..</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                        <li class="dropdown-submenu"><a class="dropdown-item" href="#">another
-                                                level</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                                <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                                <li class="dropdown-item"><a href="#">Second level</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> --}}
+                @if(auth()->user()->isAdministrador())
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-cog"></i>
-                        Settings
+                        Configuraciones
                     </a>
                     <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                        {{-- <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#">Referencias</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Geograficos</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">Paises</a></li>
-                                        <li class="dropdown-item"><a href="#">Departamentos</a></li>
-                                        <li class="dropdown-item"><a href="#">Ciudades</a></li>
-                                        <li class="dropdown-item"><a href="#">Barrios</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Admisiones</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">Tipos de Admision</a></li>
-                                        <li class="dropdown-item"><a href="#">Sub Tipos de Admision</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown-item"><a tabindex="-1" href="infraestructura">Obras
-                                        Sociales</a>
-                                </li>
-                                <li class="dropdown-item"><a tabindex="-1"
-                                        href="infraestructura">Instituciones</a>
-                                </li>
-                                <li class="dropdown-item"><a tabindex="-1" href="infraestructura">Estados
-                                        Civiles</a>
-                                </li>
-
-                                <li class="dropdown-item"><a tabindex="-1"
-                                        href="infraestructura">Nacionalidades</a>
-                                </li>
-                                <li class="dropdown-item"><a tabindex="-1" href="infraestructura">Tipos de
-                                        Documentos</a>
-                                </li>
-                                <li class="dropdown-item"><a tabindex="-1" href="infraestructura">Generos</a>
-                                </li>
-                                <li class="dropdown-item"><a tabindex="-1"
-                                        href="infraestructura">Diagnosticos</a>
-                                </li>
-
-
-                            </ul>
-                        </li> --}}
                         <li class="dropdown-submenu">
-                            <a class="dropdown-item" tabindex="-1" href="#"><i class="fab fa-product-hunt"></i> Products</a>
+                            <a class="dropdown-item" tabindex="-1" href="#"><i class="fas fa-users"></i> Usuarios y Perfiles </a>
                             <ul class="dropdown-menu">
-                                {{-- <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Geograficos</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">Paises</a></li>
-                                        <li class="dropdown-item"><a href="#">Departamentos</a></li>
-                                        <li class="dropdown-item"><a href="#">Ciudades</a></li>
-                                        <li class="dropdown-item"><a href="#">Barrios</a></li>
-                                    </ul>
+                                <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/usuarios"><i class="fas fa-user"></i> Usuarios</a>
                                 </li>
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">Admisiones</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-item"><a href="#">Tipos de Admision</a></li>
-                                        <li class="dropdown-item"><a href="#">Sub Tipos de Admision</a></li>
-                                    </ul>
-                                </li> --}}
-                                <li class="dropdown-item"><a tabindex="-1" href="/productos_estructura"><i class="fas fa-align-center"></i> Estructura</a>
+                                <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/perfiles"><i class="fas fa-user-tie"></i> Perfiles </a>
                                 </li>
-                                <li class="dropdown-item"><a tabindex="-1" href="/distancias">Distancias</a>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" tabindex="-1" href="#"><i class="fab fa-product-hunt"></i> Referencias </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/departamentos"><i class="fas fa-sitemap"></i> Departamentos </a>
                                 </li>
-                                <li class="dropdown-item"><a tabindex="-1" href="/importSQLSRV">Importar Distancias SQLSRV</a>
+                                <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/trabajos"><i class="fas fa-briefcase"></i> Trabajos </a>
                                 </li>
-                                
-                                {{-- <li class="dropdown-item"><a tabindex="-1" href="/pruebas"> Pruebas SITIOS SQLSRV</a>
-                                </li> --}}
+                                <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/departamentos_trabajos"><i class="fas fa-sign"></i> Asignacion de Trabajos - Departamentos </a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
-
                 </li>
+                @endif
+
             </ul>
 
-            <usuario-component :user="{{ auth()->user() }}"></usuario-component>
+            <nav-usuario-component :user="{{ auth()->user() }}"></nav-usuario-component>
 
         </div>
         @endauth

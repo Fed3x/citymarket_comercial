@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Trabajo extends Model
 {
@@ -23,5 +24,14 @@ class Trabajo extends Model
     public function trabajos_ejecutados()
     {
         return $this->hasMany('App\TrabajoEjecutado', 'id_trabajo');
+    }
+
+    public function departamentos()
+    {
+        return $this->belongsToMany('App\Departamento', 'departamentos_trabajos', 'id_trabajo', 'id_departamento')->withTimestamps();
+    }
+
+    public function getCreatedAtAttribute($date) {
+        return Carbon::parse($date)->setTimezone('America/Asuncion')->format('d/m/Y H:i:s');
     }
 }

@@ -15,7 +15,10 @@ class CrearTablaPdiTrabajosEjecutados extends Migration
     {
         Schema::create('pdi_trabajos_ejecutados', function (Blueprint $table) {
             $table->id();
+
             $table->foreignId('id_trabajo');
+            $table->foreign('id_trabajo')->references('id')->on('pdi_trabajos');
+            
             $table->string('serial', 32)->unique();
             $table->boolean('confirmed')->default(false);
             $table->string('created_by',10);
@@ -23,7 +26,7 @@ class CrearTablaPdiTrabajosEjecutados extends Migration
             $table->timestamps();
 
 
-            $table->foreign('id_trabajo')->references('id')->on('pdi_trabajos')->onDelete('cascade');
+
         });
     }
 

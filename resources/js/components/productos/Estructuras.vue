@@ -1,6 +1,57 @@
 <template>
 <div class="card-body">
-    <button @click="AgregarDistancia()" class="btn btn-primary float-right" type="button"><i class="fas fa-align-center"></i> Agregar Registro</button>
+    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#AgregarRegistro">
+        <i class="fas fa-align-center" ></i>Agregar Registro
+    </button>
+    <div class="modal fade" id="AgregarRegistro" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="AgregarRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="AgregarRegistroLabel">Nuevo Registro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                    <label>Codigo de Barras</label>
+                    <v-select label="codigo_barras" placeholder="Codigo de Barras" :options="productos_sin_e" :reduce="productos_sin_e => productos_sin_e.identificador"  v-model="draft.id_producto"></v-select>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Descripcion</label>
+                    <input type="text" class="form-control" disabled>
+                </div>
+                </div>
+                
+                <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Nivel</label>
+                    <v-select label="codigo_barras" placeholder="Codigo de Barras" :options="productos_sin_e" :reduce="productos_sin_e => productos_sin_e.identificador"  v-model="draft.id_nivel"></v-select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress2">Dias de Stock</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" v-model="draft.dias_stock">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress2">Stock Minimo</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" v-model="draft.stock_minimo">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress2">Micropicking</label>
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" v-model="draft.micropicking">
+                </div>
+                </div>
+
+    
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" @click="HolaRegistro()">Understood</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <div class="table-responsive-sm">
         <table class="table table-hover table-borderless table-sm text-center">
             <thead class="thead">
@@ -19,8 +70,7 @@
                 <estructura-component v-for="(estructura, index) in estructuras" 
                     :key="estructura.id" 
                     :estructura="estructura" 
-                    :index="index">
-                                                        
+                    :index="index">                        
                 </estructura-component> 
             </tbody>
         </table>
@@ -58,7 +108,7 @@
     import 'vue-select/dist/vue-select.css';
 
     export default {
-        // props: ['user'],
+        // props: [''],
         created() {
             
         },
@@ -66,29 +116,40 @@
             return{
                 estructuras:[],
                 productos_sin_e:[],
+                producto: '',
+                draft:{
+                    id_producto: '',
+                    id_nivel: '',
+                    dias_stock: '',
+                    stock_minimo: '',
+                    micropicking: ''
+                },
             }
         },
         mounted() {
             this.CargarEstructuras();
             this.CargarProductosSinEstructuras();
+            console.log(this.productos_sin_e);
         },
         methods: {
+            HolaRegistro(){
+                console.log(this.draft);
+            },
             CargarEstructuras(){
                 axios.get('/api/estructura')
                 .then((response)=>{
                     this.estructuras = response.data.data
-
                 })
                 .catch((error)=>{
                     swal("Error!", "Algo anda mal" +"\n" + error.response.data.message, "warning");
                 });
                  
             },
-
             CargarProductosSinEstructuras(){
                 axios.get('/productos_sin_estructura')
                 .then((response)=>{
-                    this.productos_sin_e = response.data.data
+                    console.log(response);
+                    this.productos_sin_e = response.data
                 })
                 .catch((error)=>{
                     swal("Error!", "Algo anda mal" +"\n" + error.response.data.message, "warning");

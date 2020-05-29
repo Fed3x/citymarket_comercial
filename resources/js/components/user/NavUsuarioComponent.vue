@@ -1,17 +1,13 @@
 <template>
     <div>
-        <ul class="navbar-nav pull-right">
+        <ul class="navbar-nav">
         <li class="nav-item dropdown active">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                 <i class="fas fa-user-circle"> {{user.name}}</i>
             </a>
-            <div class="dropdown-menu text-center" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Mi Perfil</a>
-                <a class="dropdown-item" href="#"  @click="VerFlota()">Mi Flota</a>
-
-                <div class="dropdown-divider"></div>
+            <div class="dropdown-menu text-center menu-user" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/logout">Cerrar Sesion</a>
             </div>
         </li>
@@ -117,3 +113,6 @@
       
     }
 </script>
+<style>
+
+</style>

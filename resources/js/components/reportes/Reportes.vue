@@ -19,11 +19,11 @@
 
         <div class="form-group row">
             <div class="col-md-12">
-                <v-select multiple label="descripcion" placeholder="Seleccionar un e-mail" :options="correos" :reduce="correos => correos.descripcion"  v-model="seleccion.correos"></v-select>
+                <v-select multiple label="descripcion" placeholder="Seleccionar un e-mail" :options="correos"   v-model="seleccion.correos"></v-select>
             </div>
         </div>
 
-        <button class="btn btn-primary" type="button" @click="EjecutarReporte()">Execute</button>
+        <button class="btn btn-primary" type="button" v-on:click="EjecutarReporte">Ejecutar</button>
         <button class="btn btn-danger" type="button" @click="ResetarReporte()">Reset</button>
     </div>
 </template>
@@ -44,66 +44,78 @@
         data(){
             return{
                 reportes:[],
-                correos:[
-                    {id:1,descripcion:'fbaez@tifretail.com'},
-                    {id:2,descripcion:'dortega@prv.com.py'}
-
-                ],
+                correos:[],
                 seleccion:[{
                     reporte: [],
                     fecha_i: '',
                     fecha_f: '',
-                    correos: {}
+                    correos: []
                 }],
             }
         },
         mounted() {
             this.CargarReportes();
+            this.CargarCorreos();
         },
         methods: {
             CargarReportes(){
-                axios.get('/api/trabajos')
+                axios.get('/reportes')
                     .then((response)=>{
                     this.reportes = response.data;
-                    console.log(this.reportes);
+
                 });
 
             },
+            CargarCorreos(){
+                axios.get('/usuarios')
+                    .then((response)=>{
+                        response.data.data.forEach(correo => {
+                             this.correos.push(correo.email);
+                        });
+                    })
+                    .catch((error)=>{
+                        swal("Error!", "Algo anda mal" +"\n" + error.response.data.message, "warning");
+                    });
+            },
             EjecutarReporte(){
-                // if ( [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte, this.seleccion.correos].includes(undefined) || 
-                //      [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte, this.seleccion.correos].includes(null) ||
-                //      this.seleccion.correos.length == 0 ){          
-                //     swal({
-                //         title: '¡Advertencia!',
-                //         text: 'Favor verificar los campos.',
-                //         icon: 'warning',
-                //     });
-                // }
-                // else{
-                //     const parametros = {
-                //         fecha_inicio: this.seleccion.fecha_i,
-                //         fecha_final: this.seleccion.fecha_f,
-                //         id_trabajo: this.seleccion.reporte.id,
-                //         area_trabajo: this.seleccion.reporte.area_trabajo,
-                //         trabajo: this.seleccion.reporte.trabajo,
-                //         correos: this.seleccion.correos
-                //     };
+                if ( [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte, this.seleccion.correos].includes(undefined) || 
+                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte, this.seleccion.correos].includes(null) ||
+                     this.seleccion.correos.length == 0 ){          
+                    swal({
+                        title: '¡Advertencia!',
+                        text: 'Favor verificar los campos.',
+                        icon: 'warning',
+                    });
+                }
+                else{
+                    const parametros = {
+                        fecha_inicio: this.seleccion.fecha_i,
+                        fecha_final: this.seleccion.fecha_f,
+                        id_trabajo: this.seleccion.reporte.id,
+                        area_trabajo: this.seleccion.reporte.area_trabajo,
+                        trabajo: this.seleccion.reporte.trabajo,
+                        correos: this.seleccion.correos
+                    };
 
-                //     axios.post('/ejecutar_reportes', parametros)
-                //         .then((response)=>{
+                    axios.post('/ejecutar_reportes', parametros)
+                        .then((response)=>{
 
-                //     });
-                // }
-
-                conole.log(this.seleccion);
+                    });
+                    swal({
+                        title: '¡Ejecutado!',
+                        text: 'El reporte fue ejecutado, en breve llegará a los correos seleccionados.',
+                        icon: 'success',
+                    });
+                    this.ResetarReporte();
+                }
                 
 
             },
-            Reset(){
+            ResetarReporte(){
                 this.seleccion.reporte = [];
                 this.seleccion.fecha_i = '';
                 this.seleccion.fecha_f = '';
-                console.log("reset");
+                this.seleccion.correos = [];
             }
             
 

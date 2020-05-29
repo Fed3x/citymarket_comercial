@@ -22,10 +22,12 @@ class EjecutarReporteController extends Controller
         $random = Str::random(32);
         $correos = $request->correos[0];
 
-        for ($i=1; $i < count($request->correos); $i++) { 
-            $correos = $correos . ' ' . $request->correos[$i];
+        if (count($request->correos) > 1){
+            for ($i=1; $i < count($request->correos); $i++) { 
+                $correos = $correos . ' ' . $request->correos[$i];
+            }
         }
-
+        
         $trabajo_ejecutado = New TrabajoEjecutado();
         $trabajo_ejecutado->id_trabajo = $id_trabajo;
         $trabajo_ejecutado->serial = $random;
@@ -49,7 +51,6 @@ class EjecutarReporteController extends Controller
         } catch (ProcessFailedException $e) {
             echo $e->getMessage();
         }
-
         
     }
 }

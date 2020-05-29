@@ -15,7 +15,7 @@
         <div class="col-md-2">
           <div class="card">
               <div class="card-header">Filters</div>
-                  <filters-component></filters-component>
+                  {{-- <filters-component></filters-component> --}}
               <div class="card-body">
               </div>
           </div>
