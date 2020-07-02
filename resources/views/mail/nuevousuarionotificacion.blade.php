@@ -22,7 +22,7 @@
                 <p>Equipo de TI</p>
                 
                 <hr>
-                <p> Para ingresar al sistema, por favor <a href="127.0.0.1:8000/login"> <b> inicia sesión </b>  </a> al sistema de ticket de soporte</p> 
+                <p> Para ingresar al sistema, por favor <a href="cityreportes.prv.com.py"> <b> inicia sesión </b>  </a> al sistema de ticket de soporte</p> 
                 <p> Su amistoso sistema de soporte </p>
 
                 

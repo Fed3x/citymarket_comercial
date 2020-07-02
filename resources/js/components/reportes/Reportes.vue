@@ -9,11 +9,11 @@
          <div class="form-group row">
             <div class="col-md-6">
             <label for="inputEmail4">Fecha de Inicio</label>
-            <input type="date" class="form-control" placeholder="Date start"  v-model="seleccion.fecha_i">
+            <input type="date" class="form-control" placeholder="Date start"  v-model="seleccion.fecha_i" min="2014-07-01">
             </div>
             <div class="col-md-6">
             <label for="inputEmail4">Fecha de Fin</label>
-            <input type="date" class="form-control" placeholder="Date end" v-model="seleccion.fecha_f">
+            <input type="date" class="form-control" placeholder="Date end" v-model="seleccion.fecha_f" >
             </div>
         </div>
 
@@ -78,8 +78,10 @@
                     });
             },
             EjecutarReporte(){
-                if ( [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte, this.seleccion.correos].includes(undefined) || 
-                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte, this.seleccion.correos].includes(null) ||
+                
+                if ( [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte.id, this.seleccion.reporte.trabajo, this.seleccion.reporte.area_trabajo, this.seleccion.correos].includes(undefined) || 
+                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte.id, this.seleccion.reporte.trabajo, this.seleccion.reporte.area_trabajo, this.seleccion.correos].includes(null) ||
+                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte.id, this.seleccion.reporte.trabajo, this.seleccion.reporte.area_trabajo, this.seleccion.correos].includes("") ||
                      this.seleccion.correos.length == 0 ){          
                     swal({
                         title: '¡Advertencia!',
@@ -96,7 +98,6 @@
                         trabajo: this.seleccion.reporte.trabajo,
                         correos: this.seleccion.correos
                     };
-
                     axios.post('/ejecutar_reportes', parametros)
                         .then((response)=>{
 
@@ -112,10 +113,10 @@
 
             },
             ResetarReporte(){
-                this.seleccion.reporte = [];
+                this.seleccion.reporte = '';
                 this.seleccion.fecha_i = '';
                 this.seleccion.fecha_f = '';
-                this.seleccion.correos = [];
+                this.seleccion.correos = '';
             }
             
 

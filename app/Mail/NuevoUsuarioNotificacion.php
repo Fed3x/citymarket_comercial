@@ -7,17 +7,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class NuevoUsuarioNotificacion extends Mailable
+class NuevoUsuarioNotificacion extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
     public $usuario;
     public $email;
     public $contraseña;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
+
     public function __construct($usuario, $contraseña, $email)
     {
         $this->usuario = $usuario;
@@ -25,11 +21,6 @@ class NuevoUsuarioNotificacion extends Mailable
         $this->email = $email;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
         return $this->view('mail.nuevousuarionotificacion');
