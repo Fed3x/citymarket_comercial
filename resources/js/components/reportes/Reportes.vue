@@ -94,10 +94,11 @@
                     });
             },
             EjecutarReporte(){
-                
-                if ( [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte.id, this.seleccion.reporte.trabajo, this.seleccion.reporte.area_trabajo, this.seleccion.correos].includes(undefined) || 
-                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte.id, this.seleccion.reporte.trabajo, this.seleccion.reporte.area_trabajo, this.seleccion.correos].includes(null) ||
-                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.reporte.id, this.seleccion.reporte.trabajo, this.seleccion.reporte.area_trabajo, this.seleccion.correos].includes("") ||
+               
+                if ( [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.correos, this.seleccion.reporte].includes(undefined) || 
+                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.correos, this.seleccion.reporte].includes(null) ||
+                     [this.seleccion.fecha_i, this.seleccion.fecha_f, this.seleccion.correos, this.seleccion.reporte].includes("") ||
+                     this.seleccion.reporte.lenght == 0 ||
                      this.seleccion.correos.length == 0 ){          
                     swal({
                         title: '¡Advertencia!',
@@ -129,10 +130,10 @@
 
             },
             ResetarReporte(){
-                this.seleccion.reporte = '';
+                this.seleccion.reporte = [];
                 this.seleccion.fecha_i = '';
                 this.seleccion.fecha_f = '';
-                this.seleccion.correos = '';
+                this.seleccion.correos = [];
             }
             
 

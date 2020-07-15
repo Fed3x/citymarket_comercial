@@ -11,12 +11,8 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-// Vue.component('sitios-component', require('./components/sucursal/SitiosComponent.vue').default);
-
 //FILTERS
-Vue.component('filters-component', require('./components/filters/Filter.vue').default);
+// Vue.component('filters-component', require('./components/filters/Filter.vue').default);
 
 
 //REPORTS
@@ -25,8 +21,8 @@ Vue.component('reportes-component', require('./components/reportes/Reportes.vue'
 
 //USUARIO
 
-Vue.component('flota-component', require('./components/user/FlotaComponent.vue').default);
-Vue.component('perfil-component', require('./components/user/PerfilComponent.vue').default);
+// Vue.component('flota-component', require('./components/user/FlotaComponent.vue').default);
+// Vue.component('perfil-component', require('./components/user/PerfilComponent.vue').default);
 Vue.component('nav-usuario-component', require('./components/user/NavUsuarioComponent.vue').default); 
 
 //CONFIGURACIONES
