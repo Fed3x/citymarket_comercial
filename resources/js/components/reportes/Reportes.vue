@@ -9,11 +9,11 @@
          <div class="form-group row">
             <div class="col-md-6">
             <label for="inputEmail4">Fecha de Inicio</label>
-            <input type="date" class="form-control" placeholder="Date start"  v-model="seleccion.fecha_i" min="2014-07-01">
+            <input id="fecha_i" type="date" class="form-control" placeholder="Fecha inicio"  v-model="seleccion.fecha_i" min="2014-07-01">
             </div>
             <div class="col-md-6">
             <label for="inputEmail4">Fecha de Fin</label>
-            <input type="date" class="form-control" placeholder="Date end" v-model="seleccion.fecha_f" >
+            <input id="fecha_f" type="date" class="form-control" placeholder="Fecha final" v-model="seleccion.fecha_f" min="2014-07-01">
             </div>
         </div>
 
@@ -29,6 +29,20 @@
 </template>
 
 <script>
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth()+1; //Enero es 0!
+    let yyyy = today.getFullYear();
+    if(dd<10){
+            dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+    today = yyyy+'-'+mm+'-'+dd;
+
+
     import Vue from 'vue'
     import EventBus from "../event-bus"
     import 'vue-select/dist/vue-select.css';
@@ -54,6 +68,8 @@
             }
         },
         mounted() {
+            document.getElementById("fecha_f").setAttribute("max", today);
+            document.getElementById("fecha_i").setAttribute("max", today);
             this.CargarReportes();
             this.CargarCorreos();
         },

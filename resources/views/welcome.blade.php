@@ -18,10 +18,12 @@
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                
             }
             body{
                 background: url( '{{ asset('img/citymarket.svg') }} ') no-repeat center;
-                background-size: 100% 100%;
+                background-size: cover;
+
             }
             
             .full-height {
@@ -74,7 +76,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Iniciar Sesión</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>

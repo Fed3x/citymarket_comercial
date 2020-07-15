@@ -26,28 +26,28 @@
     {{-- <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet"> --}}
   
 </head>
+
 <body>
     @if (Auth::check())
-    <div class="wrapper">
-
-        <!-- Sidebar -->
-        {{-- @include('layouts.sidebar') --}}
-        <!-- Page Content -->
-        <div id="app">
-            @include('layouts.navbar')
+        <div class="wrapper">
+    
+            <!-- Sidebar -->
+            {{-- @include('layouts.sidebar') --}}
+            <!-- Page Content -->
+            <div id="app">
+                @include('layouts.navbar')
+                <main class="py-4">
+                    @yield('content')
+                </main>
+            </div>
+        </div>
+        @else
+        <div id="app"  class="login" style="margin-left :0;">
             <main class="py-4">
                 @yield('content')
             </main>
         </div>
-    </div>
-    @else
-    <div id="app"  class="login" style="margin-left :0;">
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
-    @endif
-
+        @endif
     <!-- Scripts -->
 
     <script src="{{ asset('js/app.js') }}" defer></script>
