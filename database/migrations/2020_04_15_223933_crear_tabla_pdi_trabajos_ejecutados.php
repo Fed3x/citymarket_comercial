@@ -21,8 +21,8 @@ class CrearTablaPdiTrabajosEjecutados extends Migration
             
             $table->string('serial', 32)->unique();
             $table->boolean('confirmed')->default(false);
-            $table->string('created_by',10);
-            $table->string('updated_by',10)->nullable();
+            $table->string('created_by');
+            $table->string('updated_by')->nullable();
             $table->timestamps();
 
 

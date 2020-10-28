@@ -40,6 +40,10 @@ Vue.component('nav-usuario-component', require('./components/user/NavUsuarioComp
             Vue.component('departamento-trabajo-component', require('./components/configuraciones/referencias/departamentos_trabajos/DepartamentoTrabajo.vue').default);
             Vue.component('departamentos-trabajos-component', require('./components/configuraciones/referencias/departamentos_trabajos/DepartamentosTrabajos.vue').default);
 
+        // PARAMETROS_TRABAJOS
+        Vue.component('parametro-trabajo-component', require('./components/configuraciones/referencias/parametros_trabajos/ParametroTrabajo.vue').default);
+        Vue.component('parametros-trabajos-component', require('./components/configuraciones/referencias/parametros_trabajos/ParametrosTrabajos.vue').default);
+
         // TRABAJOS
             Vue.component('trabajo-component', require('./components/configuraciones/referencias/trabajos/Trabajo.vue').default);
             Vue.component('trabajos-component', require('./components/configuraciones/referencias/trabajos/Trabajos.vue').default);

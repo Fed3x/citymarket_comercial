@@ -20,8 +20,9 @@ class GenerarReporte implements ShouldQueue
     protected $trabajo;
     protected $random;
     protected $correos;
+    protected $productos;
 
-    public function __construct($fecha_inicio, $fecha_final, $area_trabajo, $trabajo, $random, $correos)
+    public function __construct($fecha_inicio, $fecha_final, $area_trabajo, $trabajo, $random, $correos, $productos)
     {
         $this->fecha_inicio = $fecha_inicio;
         $this->fecha_final = $fecha_final;
@@ -29,12 +30,13 @@ class GenerarReporte implements ShouldQueue
         $this->trabajo = $trabajo;
         $this->random = $random;
         $this->correos = $correos;
+        $this->productos = $productos;
     }
 
 
     public function handle()
     {
-        $command = "envoy run foo --fecha_i='$this->fecha_inicio 00:00:00' --fecha_f='$this->fecha_final 23:59:59' --area_trabajo='$this->area_trabajo' --trabajo='$this->trabajo' --serial='$this->random' --correos='$this->correos'";
+        $command = "envoy run foo --fecha_i='$this->fecha_inicio 00:00:00' --fecha_f='$this->fecha_final 23:59:59' --area_trabajo='$this->area_trabajo' --trabajo='$this->trabajo' --serial='$this->random' --correos='$this->correos' --productos='$this->productos' ";
         $directory = base_path();
         $process = Process::fromShellCommandline($command);
         $process->setTimeout(1800);

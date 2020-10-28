@@ -23,8 +23,8 @@ class CrearTablaPerfiles extends Migration
             $table->boolean('estado')->default(true);
 
             
-            $table->string('created_by',10);
-            $table->string('updated_by',10)->nullable();
+            $table->string('created_by');
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

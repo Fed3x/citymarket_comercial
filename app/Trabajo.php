@@ -31,6 +31,11 @@ class Trabajo extends Model
         return $this->belongsToMany('App\Departamento', 'departamentos_trabajos', 'id_trabajo', 'id_departamento')->withTimestamps();
     }
 
+    public function parametros()
+    {
+        return $this->belongsToMany('App\Parametro', 'pdi_trabajos_parametros', 'id_trabajo', 'id_parametro')->withTimestamps();
+    }
+
     public function getCreatedAtAttribute($date) {
         return Carbon::parse($date)->setTimezone('America/Asuncion')->format('d/m/Y H:i:s');
     }

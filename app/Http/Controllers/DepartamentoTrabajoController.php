@@ -12,7 +12,6 @@ use Illuminate\Http\Request;
 
 class DepartamentoTrabajoController extends Controller
 {
-
     public function index()
     {
 
@@ -31,13 +30,6 @@ class DepartamentoTrabajoController extends Controller
         $trabajos_sin_d  = Trabajo::doesntHave('departamentos')->get();
 
         return ['trabajo'=> $trabajo, 'trabajos_sin_d' => $trabajos_sin_d];
-    }
-
-    public function show($id)
-    {
-
-
-
     }
 
     public function update(Request $request, $id)

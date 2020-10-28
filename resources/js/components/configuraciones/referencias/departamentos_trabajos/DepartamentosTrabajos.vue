@@ -183,7 +183,7 @@
             },
             Eliminar(trabajo, index){
                 axios.delete('/departamentos_trabajos/'+trabajo.id)
-                    .then(()=>{
+                    .then((response)=>{
                         this.trabajos_sin_d = response.data.trabajos_sin_d;
                         this.departamentos_trabajos.splice(index,1);
                         swal(

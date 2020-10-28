@@ -27,7 +27,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-cog"></i>
+                        <i class="fas fa-cogs"></i>
                         Configuraciones
                     </a>
                     <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
@@ -48,6 +48,8 @@
                                 <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/trabajos"><i class="fas fa-briefcase"></i> Trabajos </a>
                                 </li>
                                 <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/departamentos_trabajos"><i class="fas fa-sign"></i> Asignacion de Trabajos - Departamentos </a>
+                                </li>
+                                <li class="dropdown-item"><a tabindex="-1" href="/configuraciones/parametros_trabajos"><i class="fas fa-cog"></i> Asignacion de Trabajos - Parametros </a>
                                 </li>
                             </ul>
                         </li>

@@ -11,7 +11,13 @@ class ProductoController extends Controller
 {
     public function index()
     {
-        $productos = Producto::all();
+        $productos = Producto::take(100)->get();
+        return $productos;
+    }
+
+    public function show($id)
+    {
+        $productos = Producto::where('codigo_barras', 'like', $id.'%')->get();
         return $productos;
     }
 

@@ -32,6 +32,9 @@ Route::group(['prefix' => 'configuraciones'], function() {
     Route::get('departamentos_trabajos', function () {
         return view('configuraciones.referencias.departamentos_trabajos');
     });
+    Route::get('parametros_trabajos', function () {
+        return view('configuraciones.referencias.parametros_trabajos');
+    });
     Route::get('departamentos', function () {
         return view('configuraciones.referencias.departamentos');
     });
@@ -61,7 +64,7 @@ Route::get('/productos_estructura', function () {
     return view('configuraciones.productos.estructura');
 });
 
-Route::get('productos','ProductoController@index');
+Route::Resource('productos','ProductoController');
 Route::get('productos_sin_estructura','ProductoController@sinestructura');
 
 Route::ApiResource('estructura', 'EstructuraController');
@@ -71,6 +74,7 @@ Route::Resource('perfiles', 'PerfilController');
 Route::Resource('departamentos', 'DepartamentoController');
 Route::ApiResource('departamentos_trabajos', 'DepartamentoTrabajoController');
 Route::Resource('reportes', 'ReporteController')->only(['index']);
+Route::Resource('parametros_trabajos', 'ParametroTrabajoController');
 
 
 
