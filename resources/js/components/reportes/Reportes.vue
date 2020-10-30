@@ -20,7 +20,7 @@
             <div class="form-group row"  v-show="parametros.productos">
                 <div class="col-md-12">
                     <label >Productos </label>
-                    <v-select multiple label="codigo_barras" placeholder="Seleccionar productos" @search="BuscarProductos" @input="LimpiarProductos" :options="productos"   v-model="seleccion.productos">
+                    <v-select multiple label="codigo_barras" placeholder="Seleccionar productos" @search="BuscarProductos" @input="LimpiarProductos" :options="productos" v-model="seleccion.productos">
                         <div slot="no-options">¡No hay opciones para listar!</div>
                     </v-select>
                 </div>
@@ -85,7 +85,7 @@
                     fecha_i: '',
                     fecha_f: '',
                     correos: [],
-                    productos: [123, 124],
+                    productos: [],
                 },
                 parametros: {
                     visible     : false,
@@ -157,9 +157,7 @@
                     })
                     .catch((error)=>{
                         swal("Error!", "Algo anda mal" +"\n" + error.response.data.message, "warning");
-                });
-                }else{
-                    console.log('no alcance aun la longitud para buscar')
+                    });
                 }
             },
             LimpiarProductos(){

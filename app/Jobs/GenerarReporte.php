@@ -36,7 +36,7 @@ class GenerarReporte implements ShouldQueue
 
     public function handle()
     {
-        $command = "envoy run foo --fecha_i='$this->fecha_inicio 00:00:00' --fecha_f='$this->fecha_final 23:59:59' --area_trabajo='$this->area_trabajo' --trabajo='$this->trabajo' --serial='$this->random' --correos='$this->correos' --productos='$this->productos' ";
+        $command = "envoy run foo --fecha_i=$this->fecha_inicio --fecha_f=$this->fecha_final --area_trabajo=$this->area_trabajo --trabajo=$this->trabajo --serial='$this->random --correos=$this->correos --productos=$this->productos";
         $directory = base_path();
         $process = Process::fromShellCommandline($command);
         $process->setTimeout(1800);

@@ -33,10 +33,10 @@ class EjecutarReporteController extends Controller
             $fecha_final = '';
         }
         if($request[1]["productos"]){
-            $productos = $request[0]["productos"][0];
+            $productos = "\'" . $request[0]["productos"][0] . "\'";
             if(count($request[0]["productos"]) > 1){
                 for ($i=1; $i < count($request[0]["productos"]); $i++){
-                    $productos = $productos . ',' . $request[0]["productos"][$i];
+                    $productos = $productos . ',' . "\'" . $request[0]["productos"][$i] . "\'";
                 }
             }
         }else{
